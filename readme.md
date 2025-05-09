@@ -14,7 +14,7 @@
 
 ## 🚀 Demonstração Online
 
-[Link para a demonstração online do seu jogo (se houver)](https://[seu-link-aqui])
+[Link para a demonstração online](https://leonardosabino2025.github.io/desafio_jogo_da_memoria_emojis/)
 
 ## ⚙️ Funcionalidades Principais
 
