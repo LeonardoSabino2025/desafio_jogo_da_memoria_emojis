@@ -1,0 +1,18 @@
+# Arquivos de sistema operacional e editores
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Módulos de Node.js (embora não estejamos usando, é bom ter por padrão)
+node_modules/
+
+# Arquivos de log
+*.log
+
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
+
+# Arquivos de pacote (se você inicializar um package.json no futuro)
+package-lock.json

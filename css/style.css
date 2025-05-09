@@ -1,0 +1,207 @@
+/* styles.css */
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fc1e8a;
+  user-select: none;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(
+    325deg,
+    #03001e 0%,
+    #7303c0 30%,
+    #ec38bc 70%,
+    #fdeff0 100%
+  );
+  padding: 40px 60px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  text-align: center; /* Centraliza o texto dentro do container, incluindo o h2 */
+}
+
+h1,
+h2 {
+  font-family: "Modak", system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  font-style: normal;
+  color: #fdeff0; /* Uma cor clara para contrastar com o fundo */
+  margin-bottom: 15px; /* Adiciona um espaço abaixo dos títulos */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilos para o título principal (h2) */
+h2 {
+  font-size: 2.5em; /* Tamanho da fonte maior para o título principal */
+}
+
+/* Estilos para outros títulos (h1, se você vier a usar) */
+h1 {
+  font-size: 3em; /* Tamanho da fonte ainda maior para um título principal de nível superior */
+}
+
+.game {
+  /* Adicione seus estilos para a área do jogo aqui */
+  width: 430px;
+  height: 430px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  grid-template-columns: repeat(4, 1fr); /* Exemplo de layout de 4 colunas */
+  margin-bottom: 20px;
+}
+
+.item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fdeff0;
+  border-radius: 4px;
+  transform: rotateY(180deg);
+  transition: 0.25s;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #f0fff0; /* Um verde bem claro quase branco */
+  /* opacity: 0.5; */
+  background-image: linear-gradient(
+      30deg,
+      #bef753 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #bef753 87.5%,
+      #bef753
+    ),
+    linear-gradient(
+      150deg,
+      #bef753 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #bef753 87.5%,
+      #bef753
+    ),
+    linear-gradient(
+      30deg,
+      #bef753 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #bef753 87.5%,
+      #bef753
+    ),
+    linear-gradient(
+      150deg,
+      #bef753 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #bef753 87.5%,
+      #bef753
+    ),
+    linear-gradient(
+      60deg,
+      #ccfb5c77 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #ccfb5c77 75%,
+      #ccfb5c77
+    ),
+    linear-gradient(
+      60deg,
+      #ccfb5c77 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #ccfb5c77 75%,
+      #ccfb5c77
+    );
+  background-size: 20px 35px;
+  background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  border-radius: 4px;
+}
+
+.reset {
+  padding: 20px 20px;
+  width: 100%;
+  background-color: #ec38bc;
+  color: #03001e;
+  border-radius: 5px;
+  border-width: 0;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reset:hover {
+  background-color: #30ca3b;
+  color: aqua;
+}
+
+.item.boxOpen {
+  transform: rotateY(0deg);
+}
+
+.boxOpen::after,
+.boxMatch::after {
+  transform: rotateY(180deg);
+}
+
+#timer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 2em;
+  color: #06ff0e;
+  margin-bottom: 10px;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 15px;
+  background-color: #f00; /* Cor inicial, será variada */
+  opacity: 1;
+  animation: confetti-fall 3s ease-in-out forwards,
+    /* ANIMAÇÃO DE QUEDA */ confetti-rotate 1s linear infinite;
+  transform-origin: center center;
+  top: -20px; /* Inicia um pouco acima da tela */
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes confetti-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

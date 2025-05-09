@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Modak&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Jogo da Memória</h2>
+      <div id="confetti-container"></div>
+      <div id="timer">Tempo restante: 60</div>
+      <div class="game"></div>
+      <button class="reset" id="startGameButton">START GAME</button>
+      <audio autoplay loop id="backgroundMusic">
+        <source src="./sounds/fundo1.mp3" type="audio/mp3" />
+        Seu navegador não suporta a tag de áudio.
+      </audio>
+      <audio id="victorySound" src="./sounds/Victory.mp3"></audio>
+      <audio id="failureSound" src="./sounds/Failure.mp3"></audio>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="./js/engine.js" defer></script>
+  </body>
+</html>
